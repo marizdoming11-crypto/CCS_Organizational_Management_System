@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+ xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+ x:Class="CSSOrg.Mobile.MainPage" BackgroundColor="#07101F" Title="CSS Organization">
+ <ScrollView><VerticalStackLayout Padding="22" Spacing="16">
+  <Label Text="CSS ORGANIZATION" TextColor="#00E5FF" FontAttributes="Bold" FontSize="13" />
+  <Label Text="Management System" TextColor="White" FontSize="25" FontAttributes="Bold"/>
+  <Label x:Name="StatusLabel" Text="Sign in to continue" TextColor="#9FB2CA"/>
+  <VerticalStackLayout x:Name="LoginPanel" Spacing="10">
+   <Entry x:Name="UsernameEntry" Placeholder="Username or email" TextColor="White" PlaceholderColor="#9FB2CA"/>
+   <Entry x:Name="PasswordEntry" Placeholder="Password" IsPassword="True" TextColor="White" PlaceholderColor="#9FB2CA"/>
+   <Button Text="Sign in" Clicked="OnLoginClicked" BackgroundColor="#00CDE9" TextColor="#07101F"/>
+  </VerticalStackLayout>
+  <VerticalStackLayout x:Name="WorkspacePanel" IsVisible="False" Spacing="12">
+   <Label x:Name="WelcomeLabel" TextColor="White" FontSize="18" FontAttributes="Bold"/>
+   <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,Auto" ColumnSpacing="10" RowSpacing="10">
+    <Button Text="Dashboard" Grid.Row="0" Grid.Column="0" Clicked="OnModuleClicked"/>
+    <Button Text="Members" Grid.Row="0" Grid.Column="1" Clicked="OnModuleClicked"/>
+    <Button Text="Events" Grid.Row="1" Grid.Column="0" Clicked="OnModuleClicked"/>
+    <Button Text="Announcements" Grid.Row="1" Grid.Column="1" Clicked="OnModuleClicked"/>
+    <Button Text="Attendance" Grid.Row="2" Grid.Column="0" Clicked="OnModuleClicked"/>
+    <Button Text="Profile" Grid.Row="2" Grid.Column="1" Clicked="OnModuleClicked"/>
+   </Grid>
+   <Button Text="🎙 Voice command" Clicked="OnVoiceClicked" BackgroundColor="#8B5CF6" TextColor="White"/>
+   <Label x:Name="VoiceTranscript" Text="Voice transcript will appear here." TextColor="#9FB2CA"/>
+   <Label x:Name="ModuleResult" TextColor="White"/>
+   <Button Text="Log out" Clicked="OnLogoutClicked" BackgroundColor="#542438" TextColor="White"/>
+  </VerticalStackLayout>
+  <Label Text="Accessibility: use Android TalkBack, display size and magnification settings. Voice input requires microphone permission." TextColor="#9FB2CA" FontSize="11"/>
+ </VerticalStackLayout></ScrollView>
+</ContentPage>

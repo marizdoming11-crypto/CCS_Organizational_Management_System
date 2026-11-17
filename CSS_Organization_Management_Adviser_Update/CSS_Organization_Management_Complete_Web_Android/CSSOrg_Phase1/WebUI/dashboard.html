@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CSS Organization Management</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="membership-fees.css">
+</head>
+
+<body class="app-body">
+
+    <div class="app-shell">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar" id="sidebar">
+
+            <div class="brand">
+              <img src="assets/img/logo.png"
+                alt="Cyber Smart Society Logo"
+                class="brand-logo">
+
+              <div>
+                <b>CYBER SMART SOCIETY</b>
+                <small>Management System</small>
+              </div>
+            </div>
+
+            <div class="nav-label">WORKSPACE</div>
+
+            <nav id="mainNav">
+
+                <button class="nav-item active" data-page="dashboard">
+                    ◈ <span>Dashboard</span>
+                </button>
+
+                <button class="nav-item" data-page="members">
+                    ♙ <span>Members</span>
+                </button>
+
+                <button class="nav-item" data-page="officers">
+                    ♟ <span>Officers</span>
+                </button>
+
+                <button class="nav-item"
+                        data-page="users"
+                        data-roles="Admin">
+                    ⚿ <span>User Management</span>
+                </button>
+
+                <button class="nav-item"
+                        data-page="attendance"
+                        data-roles="Admin,Governor,Secretary">
+                    ▦ <span>Attendance</span>
+                </button>
+
+                <button class="nav-item" data-page="events">
+                    ◇ <span>Events</span>
+                </button>
+
+                <button class="nav-item"
+                        data-page="finance"
+                        data-roles="Adviser">
+                    ₱ <span>Membership Fees</span>
+                </button>
+
+                <button class="nav-item" data-page="reports">
+                    ▥ <span>Reports</span>
+                </button>
+
+                <button class="nav-item"
+                        data-page="activity-logs"
+                        data-roles="Admin">
+                    ◷ <span>Activity Logs</span>
+                </button>
+
+            </nav>
+
+            <!-- SIDEBAR BOTTOM -->
+            <div class="sidebar-bottom">
+                <button class="nav-item" id="logoutBtn">
+                    ⇥ <span>Logout</span>
+                </button>
+            </div>
+
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-area">
+
+            <!-- TOPBAR -->
+            <header class="topbar">
+
+                <button id="menuToggle"
+                        class="icon-btn"
+                        aria-label="Toggle menu">
+                    ☰
+                </button>
+
+                <div>
+                    <div class="eyebrow">
+                        CYBER SMART SOCIETY
+                    </div>
+
+                    <h1 id="pageTitle">Dashboard</h1>
+                </div>
+
+                <div class="top-actions">
+                    <span id="roleBadge" class="role-badge">
+                        Member
+                    </span>
+
+                    <span id="userLabel">Account</span>
+                </div>
+
+            </header>
+
+            <!-- DYNAMIC PAGE CONTENT -->
+            <section id="pageContent"
+                     class="page-content"
+                     aria-live="polite">
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- TOAST NOTIFICATION -->
+    <div id="toast"
+         class="toast"
+         role="status"
+         aria-live="polite">
+    </div>
+
+    <!-- JAVASCRIPT FILES -->
+    <!-- Keep app.js before membership-fees.js -->
+    <script src="app.js"></script>
+    <script src="membership-fees.js"></script>
+
+</body>
+</html>

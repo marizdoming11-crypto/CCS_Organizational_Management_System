@@ -1,0 +1,93 @@
+CSS ORGANIZATION MANAGEMENT SYSTEM
+PHASE 2 - USER ROLE MANAGEMENT
+================================
+
+WHAT WAS ADDED
+--------------
+1. Admin-only User Management API:
+   GET  /api/User/all
+   PUT  /api/User/{id}/role
+   PUT  /api/User/{id}/status
+
+2. Roles supported:
+   Admin, Governor, Secretary, Treasurer, Member
+
+3. Admin-only Web UI:
+   Dashboard > User Management
+
+4. Safety rules:
+   - Only Admin accounts can access User Management API.
+   - Public registration always creates Member accounts.
+   - An administrator cannot remove their own Admin role.
+   - The last active administrator cannot be demoted or deactivated.
+   - Role changes take effect in a user's next login because JWT role claims
+     are issued when the user logs in.
+   - Deactivated accounts cannot log in.
+
+INITIAL ADMIN SETUP
+-------------------
+New registrations are Members by default. Promote your own trusted account
+to Admin once, using phpMyAdmin:
+
+1. Open http://localhost/phpmyadmin
+2. Select database css_org_db.
+3. Open the SQL tab.
+4. Open database/promote_initial_admin.sql in a text editor.
+5. Replace YOUR_REGISTERED_USERNAME with your own registered username.
+6. Execute the UPDATE statement.
+7. Verify that your account has role = Admin.
+8. Log out of the Web application and log in again.
+
+Do not expose public registration as an Admin role selection. Never let users
+assign their own roles.
+
+RUN THE BACKEND
+---------------
+Open PowerShell in Backend and run:
+    dotnet restore
+    dotnet run
+
+Open:
+    http://localhost:5151/swagger
+
+TEST USER MANAGEMENT
+--------------------
+1. Log in to Swagger using POST /api/Auth/login.
+2. Copy the token from the response.
+3. Click Authorize and paste the token.
+4. Test GET /api/User/all. It should return 200 for Admin.
+5. Log in with a Member account and repeat. It should return 403.
+6. Test PUT /api/User/{id}/role using:
+       { "role": "Secretary" }
+7. Test PUT /api/User/{id}/status using:
+       { "isActive": false }
+8. Confirm a deactivated user receives 403 when attempting to log in.
+
+WEB USER MANAGEMENT
+-------------------
+1. Promote your account to Admin and log in again.
+2. Open dashboard.html.
+3. Select User Management from the sidebar.
+4. Change a user's role and click Save Role.
+5. Activate/deactivate accounts using the status button.
+
+IMPORTANT
+---------
+- Keep XAMPP MySQL running while using the local application.
+- Do not share JWT tokens or passwords.
+- Role management is currently implemented in the Web application and API.
+- Android integration will consume the same API in a later phase.
+- Run tests using sample accounts, not real member credentials.
+
+DASHBOARD MENU FIX
+------------------
+Use this corrected Phase 2 archive. The dashboard sidebar now includes a
+User Management menu item that is visible only when the logged-in user's
+role is Admin. Navigation uses data-page attributes instead of fragile
+numeric menu indexes.
+
+After replacing/extracting the project:
+1. Open the WebUI folder from this extracted Phase 2 project in Live Server.
+2. Log out and log in again as the Admin user.
+3. Hard-refresh the dashboard with Ctrl+F5.
+4. Confirm User Management appears between Officers and Logout.

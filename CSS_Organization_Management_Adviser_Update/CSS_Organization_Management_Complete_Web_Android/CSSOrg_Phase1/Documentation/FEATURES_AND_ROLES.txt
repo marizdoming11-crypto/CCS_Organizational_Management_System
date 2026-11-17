@@ -1,0 +1,32 @@
+FEATURES AND ROLE MATRIX
+=======================
+
+Admin: users, members, officers, attendance, events, announcements, finance,
+       reports, organization profile, activity logs.
+Governor: members, officers, attendance, events, announcements, organization.
+Secretary: members, attendance, events, announcements, organization.
+Treasurer: finance and permitted reports.
+Member: member-level access; Android navigation is a starter interface.
+
+Voice commands (web and Android sample):
+- Open dashboard
+- Show members
+- Open events
+- Open attendance
+- Show announcements
+- Open reports
+- Open accessibility
+
+Accessibility:
+- Web text scaling and high contrast settings.
+- Web speech recognition and speech synthesis when supported by browser.
+- Android speech input and text-to-speech.
+- Android TalkBack and magnification are provided by the operating system.
+- Voice commands are optional; controls remain available on screen.
+
+Notes:
+- The current Reports page is a report landing/print view, not a full PDF/XLSX
+  report generator.
+- Android currently provides login, shared API access to selected modules,
+  voice navigation and spoken feedback. Full Android CRUD screens and push
+  notifications are subsequent implementation work.

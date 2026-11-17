@@ -1,0 +1,48 @@
+CSS ORGANIZATION MANAGEMENT SYSTEM - UPDATE NOTES
+
+This update applies the requested web-system changes.
+
+UPDATED:
+- Light theme for the web dashboard.
+- Internal primary keys and relationship IDs are hidden from visible tables and reports.
+- Voice-assistance toggle remains available at the upper-right; the dashboard's bottom voice-assistant panel is removed.
+- Hover/focus voice descriptions use faster speech synthesis (rate 1.4) and speak immediately on pointer hover.
+- Member forms and member tables show First Name, Middle Name, and Last Name separately. The existing database full_name column is retained; the three UI fields are combined into full_name when saved.
+- Officer form selects an existing member and a predefined officer position. It saves member_id and the selected member name.
+- Save/update operations show saving state, return clear errors, and refresh the list after success.
+- Edit/Delete actions use explicit event listeners and preserve the internal record ID without displaying it.
+- Organization Profile, Announcements, and Accessibility navigation/modules are removed from the web interface.
+- Reports provide Member Records, Attendance, and Financial Records previews with Print / Save as PDF.
+- Workspace API returns counts for attendance and finance in the dashboard summary.
+- Member deletion returns a readable conflict message when linked records prevent deletion.
+- Fresh database schema includes nullable officers.member_id with a foreign key to members(id), ON DELETE SET NULL.
+
+INSTALL:
+1. Back up your current project folder and database.
+2. Extract this ZIP.
+3. Copy the updated CSSOrg_Phase1/WebUI folder files into your existing WebUI folder.
+4. Copy Backend/Controllers/WorkspaceController.cs into the same path in your Backend project.
+5. For a NEW database, import database/css_org_db.sql, then database/complete_modules_schema.sql.
+6. For an EXISTING database: the screenshot supplied for this project already showed officers.member_id and its foreign key. Do not re-add that column. If your current officers table does not have member_id, the officer assignment feature requires a migration adding a nullable member_id column and FK to members(id).
+7. Restart the backend and hard-refresh the browser (Ctrl+Shift+R).
+
+REPORT PDF:
+The report screen uses the browser print engine. Click Print / Save as PDF, then choose "Save as PDF" in the browser's printer destination. The same output can be sent to a physical printer.
+
+DATABASE NOTE:
+The application keeps numeric IDs in the database for relationships and CRUD operations. IDs are hidden only from user-facing tables/reports. Member names remain stored in the existing full_name column to avoid breaking the current schema.
+
+TESTING NOTE:
+The JavaScript file passed Node.js syntax validation. A .NET build could not be run in the packaging environment because the .NET SDK is not installed there. Build the Backend project locally in Visual Studio or with `dotnet build` after replacing the controller.
+
+
+2026-11-14 UPDATE
+- Designated adviser email configured as rowenraz@gmail.com.
+- Added adviser-only login/registration enforcement in the API.
+- Added first, middle, last name and email fields to adviser registration.
+- Added database migration: database/adviser_account_migration.sql.
+- Renamed the Financial Management display label to Membership Fees while preserving finance API/table names.
+- Removed the login-page Voice Commands button only; Repeat Instructions remains.
+- Expanded hover/focus voice targets to include common text elements and removed delayed speech of typed field contents.
+- Improved contrast for form fields and table/list text.
+- Original source files not overwritten outside this separate extracted working copy.

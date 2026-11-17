@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CSS Adviser Registration</title>
+    <link rel="stylesheet" href="style.css?v=auth-fix-3">
+</head>
+
+<body class="auth-body">
+
+    <main class="auth-card">
+
+        <div class="brand auth-brand">
+            <span class="brand-mark">CSS</span>
+            <div>
+                <b>CSS ORGANIZATION</b>
+                <small>Management System</small>
+            </div>
+        </div>
+
+        <p class="eyebrow">ADVISER ACCOUNT SETUP</p>
+
+        <h1>Create adviser account</h1>
+
+        <p class="muted">
+            Registration is restricted to the designated CSS Adviser email address.
+        </p>
+
+        <form id="registerForm">
+
+            <label for="firstName">
+                First name
+                <input
+                    type="text"
+                    id="firstName"
+                    placeholder="Enter your first name"
+                    autocomplete="given-name"
+                    required
+                    maxlength="100">
+            </label>
+
+            <label for="middleName">
+                Middle name (optional)
+                <input
+                    type="text"
+                    id="middleName"
+                    placeholder="Enter your middle name"
+                    autocomplete="additional-name"
+                    maxlength="100">
+            </label>
+
+            <label for="lastName">
+                Last name
+                <input
+                    type="text"
+                    id="lastName"
+                    placeholder="Enter your last name"
+                    autocomplete="family-name"
+                    required
+                    maxlength="100">
+            </label>
+
+            <label for="email">
+                Email address
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter rowenraz@gmail.com"
+                    autocomplete="email"
+                    required
+                    maxlength="150">
+            </label>
+
+            <label for="username">
+                Username
+                <input
+                    type="text"
+                    id="username"
+                    placeholder="Create your username"
+                    autocomplete="username"
+                    required
+                    minlength="3"
+                    maxlength="100">
+            </label>
+
+            <label for="password">
+                Password
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Create a password (at least 8 characters)"
+                    autocomplete="new-password"
+                    required
+                    minlength="8">
+            </label>
+
+            <label for="confirmPassword">
+                Confirm password
+                <input
+                    type="password"
+                    id="confirmPassword"
+                    placeholder="Re-enter your password"
+                    required
+                    minlength="8">
+            </label>
+
+            <button class="primary-btn" type="submit">
+                Create adviser account
+            </button>
+
+        </form>
+
+        <p class="auth-foot">
+            Already registered?
+            <a href="index.html">Sign in</a>
+        </p>
+
+        <p
+            id="authMessage"
+            class="form-message"
+            role="alert"
+            aria-live="assertive">
+        </p>
+
+    </main>
+
+    <script src="app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="CSS Organization Management System sign-in page">
+
+    <title>CSS Organization | Sign In</title>
+
+    <link rel="stylesheet" href="style.css?v=auth-fix-3">
+</head>
+
+<body class="auth-body">
+
+    <main class="auth-card" aria-labelledby="loginTitle">
+
+        <div class="brand auth-brand">
+            <span class="brand-mark" aria-hidden="true">CSS</span>
+
+            <div>
+                <b>CSS ORGANIZATION</b>
+                <small>Management System</small>
+            </div>
+        </div>
+
+        <p class="eyebrow">WELCOME BACK</p>
+
+        <h1 id="loginTitle">Sign in</h1>
+
+        <p class="muted">
+            Access your organization workspace.
+        </p>
+
+        <section class="login-accessibility"
+                 aria-label="Login accessibility assistance">
+
+            <h2 class="sr-only">Voice assistance</h2>
+
+            <p>
+                Need assistance? You can listen to the login instructions.
+            </p>
+
+            <div class="login-voice-actions">
+                <button
+                    type="button"
+                    id="voiceGuideBtn"
+                    class="secondary-btn"
+                    aria-label="Repeat login instructions">
+                    🔊 Repeat instructions
+                </button>
+            </div>
+
+            <p
+                id="voiceStatus"
+                class="voice-status"
+                role="status"
+                aria-live="polite">
+                Login assistance is ready.
+            </p>
+
+        </section>
+
+        <form id="loginForm" aria-label="Sign in form">
+
+            <label for="username">
+                Email address
+
+                <input
+                    type="email"
+                    id="username"
+                    name="username"
+                    placeholder="Enter your adviser email address"
+                    autocomplete="username"
+                    required>
+            </label>
+
+            <label for="password">
+                Password
+
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Enter your password"
+                    autocomplete="current-password"
+                    required
+                    minlength="8">
+            </label>
+
+            <button class="primary-btn" type="submit">
+                Sign in
+            </button>
+
+        </form>
+
+        <p class="auth-foot">
+            New to CSS Org?
+            <a href="register.html">Create an account</a>
+        </p>
+
+        <p
+            id="authMessage"
+            class="form-message"
+            role="alert"
+            aria-live="assertive">
+        </p>
+
+    </main>
+
+    <script src="app.js"></script>
+
+</body>
+</html>

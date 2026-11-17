@@ -1,0 +1,8 @@
+<api type="release" assembly-name="CSSOrg.Mobile" mvid="9402b5278146493d9dc93413dfc8b51c">
+  <module assembly-name="CSSOrg.Mobile" mvid="9402b5278146493d9dc93413dfc8b51c" mvid-bytes="J7UClEaBPUmdyTQT38i1HA==">
+    <types-scratch>
+      <entry key="crc647c4f2ef21b86d954/MainActivity" java-name="crc647c4f2ef21b86d954/MainActivity" managed-type-name="CSSOrg.Mobile.MainActivity" token="33554500" />
+      <entry key="crc647c4f2ef21b86d954/MainApplication" java-name="crc647c4f2ef21b86d954/MainApplication" managed-type-name="CSSOrg.Mobile.MainApplication" token="33554501" />
+    </types-scratch>
+  </module>
+</api>

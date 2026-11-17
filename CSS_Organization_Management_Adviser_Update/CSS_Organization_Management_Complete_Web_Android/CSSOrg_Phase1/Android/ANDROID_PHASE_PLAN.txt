@@ -1,0 +1,16 @@
+ANDROID CLIENT - PHASE 6
+========================
+Technology: .NET MAUI (C#)
+Target: Android
+Users: CSS Members and Officers with role-based access
+Backend: ASP.NET Core API at the configured base URL
+Authentication: JWT Bearer token; store tokens using SecureStorage
+Accessibility: Android SpeechRecognizer, TextToSpeech, semantic labels, scalable
+text, high contrast, large touch targets, TalkBack support and non-voice alternatives.
+
+The Android application is intentionally not generated during Phase 1. First
+verify and stabilize the API contract. In Phase 6, create the app with:
+  dotnet new maui -n CSSOrgMobile
+Then add login, token storage, member/event/announcement views, voice controls,
+and platform-specific API base URLs. Android Emulator uses 10.0.2.2 to reach a
+backend running on the host machine; a physical phone uses the computer's LAN IP.

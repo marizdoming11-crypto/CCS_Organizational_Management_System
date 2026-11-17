@@ -1,0 +1,223 @@
+
+/* Membership Fee Management */
+.fee-toolbar{display:flex;align-items:end;justify-content:space-between;gap:14px;margin:18px 0;flex-wrap:wrap}
+.fee-toolbar .field{min-width:min(360px,100%);flex:1}
+.fee-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}
+.fee-tab{border:1px solid var(--border-color,#dbe3ee);background:var(--card-bg,#fff);color:var(--text-color,inherit);padding:10px 15px;border-radius:10px;cursor:pointer}
+.fee-tab.active{background:var(--primary-color,#243b65);border-color:var(--primary-color,#243b65);color:#fff}
+.fee-kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin-bottom:16px}
+.fee-kpi{background:var(--card-bg,#fff);border:1px solid var(--border-color,#dbe3ee);border-radius:14px;padding:18px}
+.fee-kpi span{display:block;color:var(--muted,#64748b);font-size:13px;margin-bottom:8px}
+.fee-kpi strong{font-size:27px}
+.fee-report-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-bottom:16px}
+.fee-summary-line{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--border-color,#e5eaf1)}
+.fee-progress{height:10px;background:#e8edf4;border-radius:20px;overflow:hidden;margin-top:18px}
+.fee-progress span{display:block;height:100%;background:#16a34a;border-radius:20px}
+.fee-big-number{font-size:38px;font-weight:750;margin:12px 0}
+.fee-note{margin:16px 0;background:var(--surface-bg,#f5f7fb)}
+.fee-status{display:inline-block;padding:5px 9px;border-radius:20px;font-size:12px;font-weight:650;background:#eef2f7;color:#334155}
+.fee-status.fully-paid,.fee-status.verified{background:#dcfce7;color:#166534}
+.fee-status.partially-paid,.fee-status.pending{background:#fef3c7;color:#92400e}
+.fee-status.unpaid,.fee-status.rejected{background:#fee2e2;color:#991b1b}
+.fee-workspace small.muted,td small.muted{display:block;margin-top:4px}
+@media(max-width:640px){.fee-toolbar{align-items:stretch}.fee-tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.fee-tab{width:100%}.fee-kpi strong{font-size:23px}}
+
+/* =========================================
+   MEMBERSHIP FEE REPORT
+========================================= */
+
+.membership-report-toolbar {
+    margin-bottom: 20px;
+}
+
+.membership-report-toolbar .form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 14px;
+}
+
+.membership-report-toolbar .field {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.membership-report-toolbar label {
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.membership-report-toolbar input,
+.membership-report-toolbar select {
+    width: 100%;
+    min-height: 40px;
+    padding: 9px 12px;
+    border: 1px solid #d5d9e2;
+    border-radius: 8px;
+    background: #fff;
+}
+
+.membership-report-toolbar .form-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.membership-report-document {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.membership-report-document .print-report-header {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.membership-report-document .attendance-kpis {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+}
+
+.membership-report-document .attendance-kpi {
+    padding: 16px;
+    border: 1px solid #e3e6ed;
+    border-radius: 10px;
+    background: #fff;
+}
+
+.membership-report-document .attendance-kpi small {
+    display: block;
+    margin-bottom: 7px;
+    color: #667085;
+}
+
+.membership-report-document .attendance-kpi strong {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.membership-report-document .attendance-analytics-card {
+    padding: 18px;
+    border: 1px solid #e3e6ed;
+    border-radius: 10px;
+    background: #fff;
+}
+
+.membership-report-document .attendance-analytics-card h3 {
+    margin: 0 0 14px;
+}
+
+.membership-report-document .fee-progress {
+    width: 100%;
+    height: 12px;
+    overflow: hidden;
+    border-radius: 20px;
+    background: #e9edf3;
+    margin-top: 10px;
+}
+
+.membership-report-document .fee-progress span {
+    display: block;
+    height: 100%;
+    border-radius: inherit;
+    background: #16a36a;
+}
+
+.membership-report-document .table-wrap {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.membership-report-document .report-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+.membership-report-document .report-table th,
+.membership-report-document .report-table td {
+    padding: 10px;
+    border: 1px solid #e2e5eb;
+    text-align: left;
+}
+
+.membership-report-document .report-table th {
+    background: #f4f6f9;
+    font-weight: 700;
+}
+
+.membership-report-document .fee-status {
+    display: inline-block;
+    padding: 5px 9px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    background: #edf0f4;
+    color: #344054;
+}
+
+.membership-report-document .fee-status.verified,
+.membership-report-document .fee-status.fully-paid {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.membership-report-document .fee-status.pending,
+.membership-report-document .fee-status.partially-paid {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.membership-report-document .fee-status.rejected,
+.membership-report-document .fee-status.unpaid {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+@media print {
+    body * {
+        visibility: hidden;
+    }
+
+    #reportPreview,
+    #reportPreview * {
+        visibility: visible;
+    }
+
+    #reportPreview {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        margin: 0;
+        padding: 10px;
+        border: none;
+        box-shadow: none;
+    }
+
+    .no-print {
+        display: none !important;
+    }
+
+    .membership-report-document .attendance-analytics-card,
+    .membership-report-document .attendance-kpi {
+        break-inside: avoid;
+    }
+
+    .membership-report-document .report-table {
+        font-size: 10px;
+    }
+
+    .membership-report-document .report-table th,
+    .membership-report-document .report-table td {
+        padding: 6px;
+    }
+}
+
+@media (max-width: 600px) {
+    .membership-report-document .attendance-kpis {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}

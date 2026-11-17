@@ -1,0 +1,15 @@
+<api>
+  <jcw-types>
+    <type name="MainActivity" package="crc647c4f2ef21b86d954" application_java_class="android.app.Application" mono_runtime_initialization="mono.MonoPackageManager.LoadApplication (context);" extends_type="crc6488302ad6e9e4df1a.MauiAppCompatActivity" partial_assembly_qualified_name="CSSOrg.Mobile.MainActivity, CSSOrg.Mobile">
+      <constructors>
+        <constructor name="MainActivity" method="n_.ctor:()V:" jni_signature="()V" managed_parameters="" retval="void" is_dynamically_registered="True" />
+        <constructor name="MainActivity" method="n_.ctor:(I)V:" jni_signature="(I)V" managed_parameters="System.Int32, System.Private.CoreLib" params="int p0" retval="void" is_dynamically_registered="True" super_call="p0" activate_call="p0" />
+      </constructors>
+    </type>
+    <type name="MainApplication" package="crc647c4f2ef21b86d954" application_java_class="android.app.Application" mono_runtime_initialization="mono.MonoPackageManager.LoadApplication (context);" extends_type="crc6488302ad6e9e4df1a.MauiApplication" is_application="True" partial_assembly_qualified_name="CSSOrg.Mobile.MainApplication, CSSOrg.Mobile" application_constructor="MainApplication" />
+  </jcw-types>
+  <acw-types partial-assembly-name="CSSOrg.Mobile" module-name="CSSOrg.Mobile.dll">
+    <type assembly-qualified-name="CSSOrg.Mobile.MainActivity, CSSOrg.Mobile, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" compat-jni-name="cssorg.mobile.MainActivity" java-key="crc647c4f2ef21b86d954.MainActivity" managed-key="CSSOrg.Mobile.MainActivity" partial-assembly-qualified-name="CSSOrg.Mobile.MainActivity, CSSOrg.Mobile" />
+    <type assembly-qualified-name="CSSOrg.Mobile.MainApplication, CSSOrg.Mobile, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" compat-jni-name="cssorg.mobile.MainApplication" java-key="crc647c4f2ef21b86d954.MainApplication" managed-key="CSSOrg.Mobile.MainApplication" partial-assembly-qualified-name="CSSOrg.Mobile.MainApplication, CSSOrg.Mobile" />
+  </acw-types>
+</api>

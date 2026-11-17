@@ -1,0 +1,24 @@
+CSS ORGANIZATION MANAGEMENT SYSTEM - ADVISER ACCESS UPDATE
+
+Designated CSS Adviser email: rowenraz@gmail.com
+
+IMPORTANT SETUP STEPS
+1. Back up your css_org_db database before applying the migration.
+2. Open phpMyAdmin, select css_org_db, and import database/adviser_account_migration.sql.
+   This migration is for an existing database and should be run only once.
+3. If the existing account used the email as its username, the migration copies it
+   to the email field and promotes that account to Admin.
+4. If the account does not yet exist, open register.html and create it using
+   rowenraz@gmail.com. The backend accepts registration only for that configured email.
+5. Start the API and sign in using rowenraz@gmail.com and the account password.
+
+ACCESS CONTROL
+The API rejects login attempts unless the supplied login name is the configured
+Adviser email. The designated account receives the existing Admin permission set
+so existing modules and CRUD endpoints remain available. The database continues
+to use the existing role values and existing module/API table names.
+
+BACKUP / PRESERVATION
+The original ZIP was not overwritten. This is a separate updated copy. Existing
+module endpoints and database tables are retained. Membership Fees is a display
+label only; the existing finance endpoint and finance_records table are unchanged.
